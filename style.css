@@ -1,0 +1,33 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #444;
+  font-family: sans-serif;
+}
+
+a {
+  color: #444;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+
+main {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+main img {
+  width: 400px;
+  height: 600px;
+  margin-bottom: 30px;
+}
