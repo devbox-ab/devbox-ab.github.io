@@ -12,7 +12,7 @@ One-page static site for Devbox, served straight from the repo root by GitHub Pa
 | `app.min.js`, the `<style>` block in `index.html` | Built from `src/` by `npm run build` (`build.mjs`). Committed, since Pages has no build step. Don't edit by hand. |
 | `fonts/` | Inter variable, self-hosted (latin subset). |
 | `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `icon-*.png`, `site.webmanifest` | Icons: the Devbox mark in #ecebe9 on #1b1b1c. |
-| `img/work/` | Case-study screenshots, cropped to 16:10 at 512w, 768w and 1024w. Produced from the raw client screenshots by the design handoff's script. |
+| `img/work/` | Case-study screenshots, cropped to 16:10 at 352w, 672w and 1024w. Produced from the raw client screenshots by the design handoff's script. |
 
 ## Working on it
 
