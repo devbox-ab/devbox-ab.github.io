@@ -1,4 +1,4 @@
-/* Devbox site styles. Source of truth; `npm run build` writes style.min.css. */
+/* Devbox site styles. Source of truth; `npm run build` minifies this into the <style> block of index.html. */
 
 @font-face {
   font-family: "Inter";
