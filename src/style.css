@@ -427,8 +427,8 @@ section[id] { scroll-margin-top: 60px; }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
-  gap: 40px 32px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 40px 28px;
 }
 
 .card {
