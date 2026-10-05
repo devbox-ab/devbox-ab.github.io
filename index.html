@@ -1,21 +1,232 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-  <title>Devbox</title>
-  <meta name="csrf-param" content="authenticity_token" />
-  <meta name="csrf-token" content="7pAEtjwlXvKiXMym+Pu/Yfy/vMlfZHH8VSvDtNJieupr1y8m9EmeQpPjM2TKjl/39gGBZwntH/4s9pcFyEAA+w==" />
-  <meta name="csp-nonce" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devbox — Senior engineers who ship</title>
+<meta name="description" content="Devbox is a Stockholm software consultancy. Senior engineers, AI-accelerated, building scalable, fault-tolerant web systems since 2018.">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#1b1b1c">
+<link rel="stylesheet" href="style.min.css">
+<script src="app.min.js" defer></script>
 </head>
 <body>
-<main>
-  <img width="400" height="600" src="logo.svg" />
-  <p>
-    <a href="mailto:martin@devbox.com">martin@devbox.com</a>
-  </p>
-  <p>+46 (0)73 039 5208<p/>
+
+<nav class="nav" aria-label="Main">
+  <div class="container nav-bar">
+    <a href="#top" class="brand" aria-label="Devbox">
+      <svg class="brand-mark" aria-hidden="true" viewBox="6060 5040 1900 1900"><path transform="matrix(1.3333333,0,0,-1.3333333,7318.2351,5681.3333)" d="M 0,0 C -0.27,-256.14 -207.858,-463.727 -463.997,-463.997 V -929 h 929 V 0 Z m -462.997,-463.997 c -0.167,0 -0.333,-0.003 -0.5,-0.003 h -464.5 v 929 h 464.5 C -206.96,465 1.003,257.037 1.003,0.5 v 0 C 1.003,0.333 1,0.167 1,0 h -463.997 z"></path></svg>
+      <svg class="brand-wordmark" aria-hidden="true" viewBox="5850 7170 2320 560"><path transform="matrix(1.3333333,0,0,-1.3333333,7820.3665,7716.8385)" d="M 0,0 92.18,130.453 0.54,263.601 h 58.757 l 66.844,-98.11 65.227,98.11 h 57.678 L 157.406,130.453 247.429,0 H 188.673 L 122.906,96.491 58.22,0 Z M -134.309,38.812 c 50.672,0 86.25,38.274 86.25,93.258 0,54.984 -35.578,93.258 -86.25,93.258 -51.21,0 -86.249,-38.274 -86.249,-93.258 0,-54.984 35.039,-93.258 86.249,-93.258 M -134.309,270.609 c 78.704,0 136.922,-57.141 136.922,-138.539 0,-81.399 -58.218,-138.538 -136.922,-138.538 -79.241,0 -137.459,57.139 -137.459,138.538 0,81.398 58.218,138.539 137.459,138.539 M -434.559,39.352 c 51.749,0 82.476,38.811 82.476,93.257 0,53.906 -30.727,92.719 -82.476,92.719 -51.75,0 -83.016,-38.813 -83.016,-92.719 0,-54.984 31.266,-93.257 83.016,-93.257 M -568.785,0 v 396.749 h 50.671 v -178.43 c 17.25,34.5 52.828,52.828 95.953,52.828 75.468,0 120.75,-59.296 120.75,-140.694 0,-79.782 -47.438,-136.921 -123.985,-136.921 -41.508,0 -76.546,18.328 -93.796,54.445 L -522.965,0 Z M -859.34,263.601 h 53.907 l 57.679,-147.163 c 9.164,-24.798 16.711,-46.9 21.023,-63.071 4.313,17.25 12.938,39.891 22.102,63.071 l 58.757,147.163 h 52.828 L -703.012,0 h -50.133 z M -1066.952,155.788 h 152.015 c 0,43.665 -28.57,72.773 -73.312,72.773 -44.203,0 -72.234,-26.414 -78.703,-72.773 M -1117.085,131.531 c 0,82.476 52.289,139.616 128.836,139.616 74.929,0 123.984,-51.75 123.984,-129.913 v -18.868 l -203.765,-0.538 c 3.773,-55.523 32.883,-86.25 83.015,-86.25 39.352,0 65.227,16.172 73.852,46.36 h 47.437 c -12.937,-56.602 -57.141,-88.406 -122.367,-88.406 -77.625,0 -130.992,56.061 -130.992,137.999 Z M -1412.411,341.226 V 49.055 h 72.234 c 86.789,0 141.774,56.061 141.774,145.546 0,90.562 -54.985,146.625 -143.93,146.625 z M -1465.238,0 v 389.741 h 126.679 c 116.437,0 195.14,-78.703 195.14,-195.14 C -1143.419,78.703 -1221.044,0 -1336.403,0 Z"></path></svg>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#about">About</a>
+    </div>
+    <a href="#contact" class="btn btn-sm nav-contact" data-close-menu>Contact us</a>
+    <button type="button" id="menu-btn" class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <svg class="icon-open" viewBox="0 0 256 256" width="22" height="22" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="40" y1="128" x2="216" y2="128"/><line x1="40" y1="64" x2="216" y2="64"/><line x1="40" y1="192" x2="216" y2="192"/></svg>
+      <svg class="icon-close" viewBox="0 0 256 256" width="22" height="22" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="200" y1="56" x2="56" y2="200"/><line x1="200" y1="200" x2="56" y2="56"/></svg>
+    </button>
+  </div>
+  <div id="menu" class="container">
+    <a href="#services" class="rule" data-close-menu>Services</a>
+    <a href="#work" class="rule" data-close-menu>Work</a>
+    <a href="#stack" class="rule" data-close-menu>Stack</a>
+    <a href="#about" class="rule" data-close-menu>About</a>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="container hero">
+    <div class="hero-copy">
+      <h1>
+        <span>Senior engineers who ship.</span>
+        <span class="accent">AI-accelerated, never AI-dependent.</span>
+      </h1>
+      <p class="lead">We've built search for Sweden's largest property portal and production software for personalized medication. Today we use AI to work faster, with the same reviews and tests.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-md">Contact us</a>
+        <a href="#work" class="btn-ghost">See our work</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <svg aria-hidden="true" data-trace="hero" viewBox="5850 5040 2320 2700">
+      <path transform="matrix(1.3333333,0,0,-1.3333333,7318.2351,5681.3333)" d="M 0,0 C -0.27,-256.14 -207.858,-463.727 -463.997,-463.997 V -929 h 929 V 0 Z"></path>
+      <path transform="matrix(1.3333333,0,0,-1.3333333,7318.2351,5681.3333)" d="M -462.997,-463.997 c -0.167,0 -0.333,-0.003 -0.5,-0.003 h -464.5 v 929 h 464.5 C -206.96,465 1.003,257.037 1.003,0.5 v 0 C 1.003,0.333 1,0.167 1,0 h -463.997 z"></path>
+      <path transform="matrix(1.3333333,0,0,-1.3333333,7820.3665,7716.8385)" d="M -1412.411,341.226 V 49.055 h 72.234 c 86.789,0 141.774,56.061 141.774,145.546 0,90.562 -54.985,146.625 -143.93,146.625 z M -1465.238,0 v 389.741 h 126.679 c 116.437,0 195.14,-78.703 195.14,-195.14 C -1143.419,78.703 -1221.044,0 -1336.403,0 Z"></path>
+      <path transform="matrix(1.3333333,0,0,-1.3333333,7820.3665,7716.8385)" d="M -1066.952,155.788 h 152.015 c 0,43.665 -28.57,72.773 -73.312,72.773 -44.203,0 -72.234,-26.414 -78.703,-72.773 M -1117.085,131.531 c 0,82.476 52.289,139.616 128.836,139.616 74.929,0 123.984,-51.75 123.984,-129.913 v -18.868 l -203.765,-0.538 c 3.773,-55.523 32.883,-86.25 83.015,-86.25 39.352,0 65.227,16.172 73.852,46.36 h 47.437 c -12.937,-56.602 -57.141,-88.406 -122.367,-88.406 -77.625,0 -130.992,56.061 -130.992,137.999 Z"></path>
+      <path transform="matrix(1.3333333,0,0,-1.3333333,7820.3665,7716.8385)" d="M -859.34,263.601 h 53.907 l 57.679,-147.163 c 9.164,-24.798 16.711,-46.9 21.023,-63.071 4.313,17.25 12.938,39.891 22.102,63.071 l 58.757,147.163 h 52.828 L -703.012,0 h -50.133 z"></path>
+      <path transform="matrix(1.3333333,0,0,-1.3333333,7820.3665,7716.8385)" d="M -434.559,39.352 c 51.749,0 82.476,38.811 82.476,93.257 0,53.906 -30.727,92.719 -82.476,92.719 -51.75,0 -83.016,-38.813 -83.016,-92.719 0,-54.984 31.266,-93.257 83.016,-93.257 M -568.785,0 v 396.749 h 50.671 v -178.43 c 17.25,34.5 52.828,52.828 95.953,52.828 75.468,0 120.75,-59.296 120.75,-140.694 0,-79.782 -47.438,-136.921 -123.985,-136.921 -41.508,0 -76.546,18.328 -93.796,54.445 L -522.965,0 Z"></path>
+      <path transform="matrix(1.3333333,0,0,-1.3333333,7820.3665,7716.8385)" d="M -134.309,38.812 c 50.672,0 86.25,38.274 86.25,93.258 0,54.984 -35.578,93.258 -86.25,93.258 -51.21,0 -86.249,-38.274 -86.249,-93.258 0,-54.984 35.039,-93.258 86.249,-93.258 M -134.309,270.609 c 78.704,0 136.922,-57.141 136.922,-138.539 0,-81.399 -58.218,-138.538 -136.922,-138.538 -79.241,0 -137.459,57.139 -137.459,138.538 0,81.398 58.218,138.539 137.459,138.539"></path>
+      <path transform="matrix(1.3333333,0,0,-1.3333333,7820.3665,7716.8385)" d="M 0,0 92.18,130.453 0.54,263.601 h 58.757 l 66.844,-98.11 65.227,98.11 h 57.678 L 157.406,130.453 247.429,0 H 188.673 L 122.906,96.491 58.22,0 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section class="clients" aria-label="Clients">
+    <div class="container clients-inner">
+      <div class="clients-label">High-traffic platforms, digital health, logistics, finance tech.</div>
+      <div class="clients-list" data-reveal>
+        <span>Hemnet</span><span>Instabee</span><span>Joint Academy</span><span>Health Integrator</span><span>ApoEx</span><span>ICANIWILL</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section id="services">
+      <div class="section-head">
+        <div class="eyebrow">Services</div>
+        <h2 class="title-lg">From architecture to production.</h2>
+      </div>
+
+      <div class="service rule" data-reveal>
+        <div class="service-title"><span class="service-num">01</span><h3>Embedded engineers</h3></div>
+        <p>Our engineers join your team and take features from idea to deploy. We leave the codebase better tested and documented than we found it.</p>
+      </div>
+      <div class="service rule" data-reveal>
+        <div class="service-title"><span class="service-num">02</span><h3>Technical leadership</h3></div>
+        <p>Architecture and code reviews that end in a concrete plan: what to fix first, what can wait and what it will cost.</p>
+      </div>
+      <div class="service rule" data-reveal>
+        <div class="service-title"><span class="service-num">03</span><h3>Project-based work</h3></div>
+        <p>A defined scope, a small senior team and regular demos, from first sketch to finished product.</p>
+      </div>
+      <div class="service rule" data-reveal>
+        <div class="service-title"><span class="service-num">04</span><h3>AI-accelerated</h3></div>
+        <p>Agentic coding and spec-driven development are part of our daily work. Every change is still reviewed and tested by an engineer.</p>
+      </div>
+      <div class="service rule" data-reveal>
+        <div class="service-title"><span class="service-num">05</span><h3>Backend, cloud &amp; search</h3></div>
+        <p>Backend systems and APIs at depth, with the frontend skills to ship the whole thing. Cloud migrations to AWS or GCP, or back off the cloud when that saves money. Search with OpenSearch. Tech debt paid down with real test suites.</p>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-head">
+        <div class="eyebrow">Work</div>
+        <h2 class="title-lg">Selected work.</h2>
+      </div>
+      <div class="cards">
+        <article class="card" data-reveal>
+          <div class="card-media">
+            <picture>
+              <source type="image/webp" srcset="img/work/hemnet-512.webp 512w, img/work/hemnet-1024.webp 1024w" sizes="(min-width: 1000px) 584px, 100vw">
+              <img src="img/work/hemnet-1024.jpg" srcset="img/work/hemnet-512.jpg 512w, img/work/hemnet-1024.jpg 1024w" sizes="(min-width: 1000px) 584px, 100vw" width="1024" height="640" loading="lazy" decoding="async" alt="Hemnet property search with map">
+            </picture>
+          </div>
+          <div class="card-body">
+            <h3>Hemnet</h3>
+            <div class="meta">Sweden's largest property portal</div>
+            <p>Replaced SQL search with Elasticsearch with zero downtime, and made saved-search alerts real-time.</p>
+          </div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card-media">
+            <picture>
+              <source type="image/webp" srcset="img/work/jointacademy-512.webp 512w, img/work/jointacademy-1024.webp 1024w" sizes="(min-width: 1000px) 584px, 100vw">
+              <img src="img/work/jointacademy-1024.jpg" srcset="img/work/jointacademy-512.jpg 512w, img/work/jointacademy-1024.jpg 1024w" sizes="(min-width: 1000px) 584px, 100vw" width="1024" height="640" loading="lazy" decoding="async" alt="Joint Academy app screens">
+            </picture>
+          </div>
+          <div class="card-body">
+            <h3>Joint Academy</h3>
+            <div class="meta">Digital treatment for chronic joint and back pain</div>
+            <p>Moved the platform to AWS and built BankID authentication.</p>
+          </div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card-media">
+            <picture>
+              <source type="image/webp" srcset="img/work/icaniwill-512.webp 512w, img/work/icaniwill-1024.webp 1024w" sizes="(min-width: 1000px) 584px, 100vw">
+              <img src="img/work/icaniwill-1024.jpg" srcset="img/work/icaniwill-512.jpg 512w, img/work/icaniwill-1024.jpg 1024w" sizes="(min-width: 1000px) 584px, 100vw" width="1024" height="640" loading="lazy" decoding="async" alt="ICANIWILL campaign">
+            </picture>
+          </div>
+          <div class="card-body">
+            <h3>ICANIWILL</h3>
+            <div class="meta">Swedish training apparel brand</div>
+            <p>Built their influencer marketing management platform.</p>
+          </div>
+        </article>
+        <article class="card" data-reveal>
+          <div class="card-media">
+            <picture>
+              <source type="image/webp" srcset="img/work/apoex-512.webp 512w, img/work/apoex-1024.webp 1024w" sizes="(min-width: 1000px) 584px, 100vw">
+              <img src="img/work/apoex-1024.jpg" srcset="img/work/apoex-512.jpg 512w, img/work/apoex-1024.jpg 1024w" sizes="(min-width: 1000px) 584px, 100vw" width="1024" height="640" loading="lazy" decoding="async" alt="ApoEx website">
+            </picture>
+          </div>
+          <div class="card-body">
+            <h3>ApoEx</h3>
+            <div class="meta">Personalized medication for Swedish healthcare</div>
+            <p>Built the software that runs manufacturing and shipping, plus an order-status app used by Region Stockholm and Region Skåne.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="rule">
+      <div class="stack">
+        <div class="stack-intro">
+          <div class="eyebrow">Stack</div>
+          <h2 class="title-md">Strong on the backend. Capable everywhere else.</h2>
+          <p>Old craft, new tools. This is what we reach for most often, not a ceiling. Rust and Go when the problem calls for it.</p>
+        </div>
+        <div class="stack-groups">
+          <div class="group" data-reveal>
+            <div class="group-label">Backend</div>
+            <div class="tags"><span class="tag">TypeScript</span><span class="tag">Ruby</span><span class="tag">Rust</span><span class="tag">Go</span><span class="tag">GraphQL</span></div>
+          </div>
+          <div class="group" data-reveal>
+            <div class="group-label">Frontend</div>
+            <div class="tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">React Native</span><span class="tag">Remix</span><span class="tag">TanStack Start</span></div>
+          </div>
+          <div class="group" data-reveal>
+            <div class="group-label">Data &amp; search</div>
+            <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MariaDB</span><span class="tag">OpenSearch</span></div>
+          </div>
+          <div class="group" data-reveal>
+            <div class="group-label">Cloud</div>
+            <div class="tags"><span class="tag">AWS</span><span class="tag">Google Cloud</span><span class="tag">Terraform</span><span class="tag">Kubernetes</span></div>
+          </div>
+          <div class="group" data-reveal>
+            <div class="group-label">AI engineering</div>
+            <div class="tags"><span class="tag">Agentic coding</span><span class="tag">Claude Design</span><span class="tag">LLM APIs</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about" data-reveal>
+        <div class="eyebrow">About</div>
+        <h2 class="title-md">A small senior team.</h2>
+        <p>We build systems that have to stay fast and reliable under real traffic. We work closely with your team, and with support agreements in place we keep maintaining what we've built long after launch.</p>
+        <div class="meta">Founded 2018 in Stockholm, Sweden</div>
+      </div>
+    </section>
+
+    <section id="contact" class="rule">
+      <div class="contact" data-reveal>
+        <h2>Let's build it properly.</h2>
+        <p class="lead">Tell us what you're building. We'll tell you how we'd approach it and what it would take.</p>
+        <div class="contact-actions">
+          <a href="mailto:martin@devbox.com" class="btn btn-lg">martin@devbox.com</a>
+          <a href="tel:+46730395208" class="btn btn-lg">+46 73 039 52 08</a>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
+
+<footer class="container">
+  <div class="footer rule">
+    <span>© 2026 Devbox</span>
+    <span>Stockholm, Sweden</span>
+  </div>
+</footer>
+
 </body>
 </html>

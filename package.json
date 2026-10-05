@@ -1,0 +1,14 @@
+{
+  "name": "devbox-site",
+  "private": true,
+  "description": "Devbox marketing site. Static, served from the repo root by GitHub Pages.",
+  "scripts": {
+    "build": "esbuild src/app.js --bundle --minify --format=iife --target=es2020 --banner:js='/* Built from src/app.js. Do not edit; run npm run build. */' --outfile=app.min.js && esbuild src/style.css --minify --banner:css='/* Built from src/style.css. Do not edit; run npm run build. */' --outfile=style.min.css"
+  },
+  "dependencies": {
+    "motion": "12.43.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}
