@@ -21,24 +21,23 @@ matchMedia("(min-width: 720px)").addEventListener("change", (e) => e.matches && 
 // Motion -------------------------------------------------------------------
 
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-const accent = getComputedStyle(document.documentElement).getPropertyValue("--color-accent").trim();
 const logo = document.querySelector("[data-trace]");
 const paths = logo.querySelectorAll("path");
+const ACCENT = "var(--color-accent)";
 
-const fillLogo = () => paths.forEach((p) => Object.assign(p.style, { fill: accent, fillOpacity: 1 }));
+const fillLogo = () => paths.forEach((p) => Object.assign(p.style, { fill: ACCENT, fillOpacity: 1 }));
 
 if (reduceMotion) {
   fillLogo();
 } else {
-  // Hero logo trace: each path draws its outline, then fades its fill in. Plays once, when the logo is in view.
   const SPEED = 0.75;
-  let traced = false;
 
+  // Hero logo trace: each path draws its outline, then fades its fill in. Plays once, when the logo is in view.
   const trace = () => {
-    traced = true;
+    const lens = [...paths].map((p) => p.getTotalLength()); // read all before writing any
     paths.forEach((p, i) => {
-      const len = p.getTotalLength();
-      Object.assign(p.style, { fill: accent, stroke: accent, strokeWidth: "12", strokeDasharray: len, strokeDashoffset: len, fillOpacity: 0 });
+      const len = lens[i];
+      Object.assign(p.style, { fill: ACCENT, stroke: ACCENT, strokeWidth: "12", strokeDasharray: len, strokeDashoffset: len, fillOpacity: 0 });
       animate(len, 0, {
         duration: 1 / SPEED,
         delay: (0.2 + i * 0.06) / SPEED,
@@ -53,12 +52,8 @@ if (reduceMotion) {
     });
   };
 
-  // Scroll reveals: elements below the fold fade in and move up as they enter.
-  // Anything the user has already scrolled past (an anchor jump) appears at once.
-  let pending = [...document.querySelectorAll("[data-reveal]")]
-    .filter((el) => el.getBoundingClientRect().top >= innerHeight * 0.92);
-  pending.forEach((el) => { el.style.opacity = 0; });
-
+  // Scroll reveals: elements below the fold are hidden on first observation and fade in as they enter.
+  // Anything already on screen, or above it after an anchor jump, is left alone.
   const show = (el, animated) => {
     if (animated) {
       animate(el, { opacity: [0, 1], transform: ["translateY(28px)", "translateY(0px)"] }, { duration: 0.8, ease: [0.22, 1, 0.36, 1] });
@@ -67,34 +62,19 @@ if (reduceMotion) {
     }
   };
 
-  let raf = 0;
-  const check = () => {
-    raf = 0;
-    const vh = innerHeight;
-    if (!traced && logo.getBoundingClientRect().top < vh * 0.85) trace();
-    pending = pending.filter((el) => {
-      const top = el.getBoundingClientRect().top;
-      if (top >= vh * 0.92) return true;
-      show(el, top > -el.offsetHeight);
-      return false;
-    });
-    if (!pending.length && traced) unbind();
-  };
-  const onScroll = () => { if (!raf) raf = requestAnimationFrame(check); };
-  const unbind = () => {
-    removeEventListener("scroll", onScroll, true);
-    removeEventListener("resize", onScroll);
-  };
-
-  addEventListener("scroll", onScroll, { passive: true, capture: true });
-  addEventListener("resize", onScroll);
-  check();
-
-  // Safeguard: nothing stays hidden for more than 8s.
-  setTimeout(() => {
-    pending.forEach((el) => show(el, false));
-    pending = [];
-    if (!traced) fillLogo();
-    unbind();
-  }, 8000);
+  const io = new IntersectionObserver((entries) => {
+    const vh = innerHeight; // layout is clean at the start of an IO callback, so this read is free
+    for (const { target: el, isIntersecting, boundingClientRect: rect } of entries) {
+      if (el === logo) {
+        if (isIntersecting) { trace(); io.unobserve(el); }
+      } else if (isIntersecting || rect.top < vh) {
+        show(el, el.style.opacity === "0");
+        io.unobserve(el);
+      } else {
+        el.style.opacity = 0;
+      }
+    }
+  }, { rootMargin: "0px 0px -8% 0px" });
+  io.observe(logo);
+  document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
 }
